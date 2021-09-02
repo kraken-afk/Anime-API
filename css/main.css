@@ -1,0 +1,423 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*:focus {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* base */
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;700&display=swap");
+
+/* 200 - 400 - 600 - 700 */
+/* font-family: 'Nunito', sans-serif; */
+
+:root {
+  font-size: 16px;
+  --ff-main: "Nunito", sans-serif;
+
+  --color-b100: #457b9d;
+  --color-b300: #480ca8;
+  --color-b600: #1d3557;
+  --color-y300: #ffba08;
+  --color-y500: #dc2f02;
+}
+
+body {
+  font-family: var(--ff-main);
+  background-color: #e2e2e2;
+}
+
+.background {
+  position: fixed;
+  z-index: -5;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+}
+
+.box {
+  width: 25rem;
+  height: 25rem;
+  background-color: yellow;
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  transform: translate(-50%, -50%) rotate(10deg);
+  border-radius: 10px;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+}
+
+/* style */
+
+.bi-list {
+  color: #fff;
+  display: none;
+}
+
+.nav {
+  width: 100%;
+  height: 70px;
+  background-color: var(--color-b600);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: static;
+}
+
+.navInput {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.linksWrapper {
+  color: #fff;
+  font-weight: 600;
+  cursor: default;
+  margin-right: 1rem;
+}
+
+.linksWrapper span {
+  margin: 0 0.1rem;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.linksWrapper .active {
+  opacity: 1;
+}
+
+.made {
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0.5rem 0 1rem;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+.acnhor {
+  font-weight: 700 !important;
+  color: var(--color-y300) !important;
+  text-decoration: underline !important;
+  text-decoration-style: wavy !important;
+  font-size: clamp(0.8 rem, 2vw, 1rem);
+}
+
+#search {
+  border: 0px solid var(--color-y500) !important;
+  border-radius: 2px !important;
+  font-family: var(--ff-main) !important;
+  font-size: 1rem;
+  margin-right: 1rem;
+  background-color: #e2e2e2;
+  padding: 0.5rem 1rem;
+}
+
+#seacrhBtn {
+  border: 3px solid var(--color-y300);
+  border-radius: 4px;
+  background-color: var(--color-b600);
+  color: var(--color-y300);
+  padding: min(4vw, 6px);
+  font-weight: 600;
+  transition: 0.3s;
+  margin: 1rem;
+}
+
+#seacrhBtn:hover {
+  font-weight: 600;
+
+  background-color: var(--color-y300);
+  color: var(--color-b600);
+}
+
+.searchWrapper {
+}
+
+.myCard {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+  width: 80%;
+  padding: 1rem;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.31);
+  margin-bottom: 1.5rem;
+  /* background-color: #ffffff; */
+
+  /* filter: blur(0.4rem); */
+}
+
+.myCard::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to top left,
+    rgba(255, 255, 255, 0.56),
+    rgba(255, 255, 255, 0.2)
+  );
+  filter: blur(0.7px);
+}
+
+.cardContent {
+  margin-left: 3rem;
+}
+
+.imgwrapper img {
+  width: 100%;
+  border-radius: 3px;
+}
+
+.cardContent h2 {
+  font-size: 1.5rem;
+  max-width: 75%;
+  margin: 1rem 0;
+  font-weight: 700;
+}
+
+.cardContent p {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  max-width: 70%;
+}
+
+.type {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-weight: 700;
+}
+
+.score {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 3.3rem;
+  right: 2rem;
+  font-weight: 700;
+}
+
+.episode {
+  position: absolute;
+  font-weight: 700;
+  font-family: var(--ff-main);
+}
+
+.star {
+  display: block;
+  margin-left: 5px;
+  transform: translateY(-1px);
+  color: var(--color-y300);
+}
+
+.links {
+  margin: 1.5rem 0;
+}
+
+.myAnime {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  background-color: var(--color-b100);
+  font-weight: 700;
+  border-radius: 4px;
+  margin: 0 2rem 0 0;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.myAnime:hover {
+  opacity: 1;
+  color: #fff;
+}
+
+.myAnime:active {
+  opacity: 0.7;
+  transform: scale(0.95);
+}
+
+.volume {
+  display: inline-block;
+  font-weight: 700;
+  font-family: var(--ff-main);
+  transform: translate(7rem, -0.5rem);
+}
+
+.bi-search {
+  display: none;
+}
+
+.loadWrapper small {
+  max-width: 50%;
+}
+
+.loadWrapper {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.loadWrapper h1 {
+  margin: 1rem 0;
+}
+
+.loadWrapper p {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 800px) {
+  .head {
+    display: none;
+  }
+
+  .linksWrapper {
+    margin-left: 2rem;
+  }
+
+  .navInput {
+    position: absolute;
+    background-color: var(--color-b600);
+    top: 0;
+    width: 100%;
+    z-index: 5;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .volume {
+    position: absolute;
+    top: 5%;
+    left: 6.5%;
+    background-color: #ffffff;
+    padding: 1rem;
+  }
+
+  .container-md {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .myCard {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+  }
+
+  .imgwrapper {
+    max-width: 100%;
+  }
+
+  #search {
+    margin: 0;
+  }
+
+  .imgwrapper img {
+    max-width: 15rem;
+  }
+
+  .cardContent {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /* .bi-list {
+    display: block;
+    font-size: 3rem;
+    margin-right: 1.5rem;
+  } */
+
+  .imgwrapper img {
+    width: 100%;
+  }
+
+  .head {
+    display: block;
+    position: absolute;
+    right: 0;
+  }
+
+  .made {
+    font-size: 0.6rem;
+  }
+
+  .acnhor {
+    font-size: 0.7rem;
+  }
+
+  .bi-search {
+    display: block;
+    position: absolute;
+    z-index: 4;
+    right: 10px;
+    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .myCard {
+    width: 95%;
+    margin-top: 1rem;
+  }
+
+  .cardContent {
+    margin-top: 4rem;
+  }
+
+  .type {
+    top: 56%;
+    left: 8%;
+  }
+
+  .score {
+    top: 56%;
+    right: 9%;
+  }
+
+  .linksWrapper {
+    display: inline-block;
+    transform: translateY(25px);
+  }
+
+  .searchWrapper {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--color-b600);
+  }
+
+  #search {
+    width: 100%;
+    height: 50px;
+  }
+
+  #seacrhBtn {
+    display: none;
+  }
+
+  .loadWrapper small {
+    max-width: 80%;
+  }
+}
