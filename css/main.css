@@ -170,7 +170,7 @@ body {
     rgba(255, 255, 255, 0.56),
     rgba(255, 255, 255, 0.2)
   );
-  filter: blur(0.7px);
+  filter: blur(1.5px);
 }
 
 .cardContent {
